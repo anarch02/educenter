@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         $branches = require database_path('factories/tests/branches.php');
         $subjects = require database_path('factories/tests/subjects.php');
 
+        $lessons = require database_path('factories/tests/lessons.php');
+
         foreach ($regions as $region) {
             \App\Models\Region::create($region);
         }
@@ -38,10 +40,12 @@ class DatabaseSeeder extends Seeder
          \App\Models\ClassRoom::factory(50)->create();
 
         \App\Models\Subject::insert($subjects);
-         \App\Models\Course::factory(10)->create();
+        \App\Models\Course::factory(10)->create();
         \App\Models\Teacher::factory(10)->create();
         \App\Models\Group::factory(10)->create();
         \App\Models\Student::factory(100)->create();
+        \App\Models\Lesson::insert($lessons);
+
 
 
         \App\Models\User::factory()->create([
@@ -59,5 +63,7 @@ class DatabaseSeeder extends Seeder
         $groups->each(function ($group) use ($students, $teachers) {
             $group->students()->attach($students->random(10));
         });
+
+        
     }
 }

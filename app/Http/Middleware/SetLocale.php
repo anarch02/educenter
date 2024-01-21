@@ -17,6 +17,7 @@ class SetLocale
     {
         $language = 'en'; // default
 
+
         if (request('language')) {
             $language = request('language');
             session()->put('language', $language);

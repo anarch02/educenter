@@ -5,10 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\ClassRoomContoller;
 use App\Http\Controllers\Admin\GroupContoller;
+use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\StudentContoller;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -30,9 +32,9 @@ Auth::routes();
 
 
 
-
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'set_locale'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('language/{lang}', [LanguageController::class, 'change'])->name('lang');
 
     Route::resource('branches', BranchController::class);
     Route::resource('class_rooms', ClassRoomContoller::class);
@@ -40,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('students', StudentContoller::class);
     Route::resource('subjects', SubjectController::class);
     Route::resource('teachers', TeacherController::class);
+    Route::resource('lessons', LessonController::class);
 });
 
 
