@@ -18,6 +18,16 @@ return new class extends Migration
             $table->string('end_time');
             $table->timestamps();
         });
+
+        Schema::create('lessons_group', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(\App\Models\Branch::class)->constrainted()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(\App\Models\Group::class)->constrainted()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(\App\Models\ClassRoom::class)->constrainted()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(\App\Models\Lesson::class)->constrainted()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('day');
+            $table->timestamps();
+        });
     }
 
     /**

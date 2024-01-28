@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $cities = require database_path('factories/tests/cities.php');
         $branches = require database_path('factories/tests/branches.php');
         $subjects = require database_path('factories/tests/subjects.php');
+        $days_of_week = require database_path('factories/tests/days_of_week.php');
 
         $lessons = require database_path('factories/tests/lessons.php');
 
@@ -45,6 +46,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\Group::factory(10)->create();
         \App\Models\Student::factory(100)->create();
         \App\Models\Lesson::insert($lessons);
+        \App\Models\DaysOfWeek::insert($days_of_week);
+
+        \App\Models\TimeTable::factory(100)->create();
 
 
 
@@ -59,6 +63,9 @@ class DatabaseSeeder extends Seeder
         $teachers = Teacher::all();
         $groups = Group::all();
         $students = Student::all();
+        $lessons = \App\Models\Lesson::all();
+
+        
 
         $groups->each(function ($group) use ($students, $teachers) {
             $group->students()->attach($students->random(10));

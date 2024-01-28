@@ -78,19 +78,6 @@
     </div>
     <!-- ROW-1 CLOSED -->
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <h1 class="text-center">{{ __('app.timetable') }}</h1>
-                </div>
-                <div class="card-body">
-                    <x-time-table :object="$group->timetable" ></x-time-table>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 @endsection
 

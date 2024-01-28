@@ -9,9 +9,8 @@ class LanguageController extends Controller
 {
     public function change($lang)
     {
-        // dd('controller');
-        session(['locale' => $lang]);
-        App::setLocale($lang);
+        session(['language' => $lang]);
+        $status = App::setLocale($lang);
         
         return redirect()->back();
     }

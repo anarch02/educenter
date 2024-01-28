@@ -15,7 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" />
 
     <!-- TITLE -->
-    <title>Sash – Bootstrap 5 Admin & Dashboard Template</title>
+    <title>Sash – Education center</title>
 
     <!-- BOOTSTRAP CSS -->
     <link id="style" href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -168,19 +168,18 @@
                 <div class="container px-sm-0">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 mb-5 pb-5 animation-zidex pos-relative">
-                            <h4 class="fw-semibold mt-7">Manage Your Business</h4>
-                            <h1 class="text-start fw-bold">We Help to Build Your Dream Project with <span class="text-primary animate-heading">Sash</span></h1>
+                            <h4 class="fw-semibold mt-7">Enhance Your Skills</h4>
+                            <h1 class="text-start fw-bold">Unlock Your Potential with <span class="text-primary animate-heading">sash</span></h1>
                             <h6 class="pb-3">
-                                Sash - Now you can use this admin template to design stunning dashboards
-                                that will wow your target viewers or users to no end. To create a good and well-structured dashboard,
-                                you need to start from scratch with HTML, SCSS, CSS, and JS and with lots of coding,
-                                but by using this Sash-Admin template.</h6>
-
-                            <a href="https://themeforest.net/item/sash-bootstrap-5-admin-dashboard-template/35183671" target="_blank" class="btn ripple btn-min w-lg mb-3 me-2 btn-primary"><i
+                                Sash - Empowering learners with comprehensive courses and resources to excel in their chosen fields.
+                                Experience a seamless learning journey with our user-friendly platform, designed to maximize your educational growth.
+                            </h6>
+            
+                            <a href="https://example.com/get-started" target="_blank" class="btn ripple btn-min w-lg mb-3 me-2 btn-primary"><i
                                     class="fe fe-play me-2"></i> Get Started
                             </a>
-                            <a href="https://themeforest.net/user/spruko/portfolio"
-                               class="btn ripple btn-min w-lg btn-outline-primary mb-3 me-2" target="_blank"><i
+                            <a href="https://example.com/discover-more"
+                                class="btn ripple btn-min w-lg btn-outline-primary mb-3 me-2" target="_blank"><i
                                     class="fe fe-eye me-2"></i>Discover More
                             </a>
                         </div>
@@ -190,6 +189,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
 
         <!--app-content open-->
@@ -204,9 +204,9 @@
                         <div class="section pb-0">
                             <div class="container">
                                 <div class="row">
-                                    <h4 class="text-center fw-semibold">Statistics</h4>
+                                    <h4 class="text-center fw-semibold">Educational Insights</h4>
                                     <span class="landing-title"></span>
-                                    <h2 class="text-center fw-semibold mb-7">Sash Template Statistics.</h2>
+                                    <h2 class="text-center fw-semibold mb-7">Statistics</h2>
                                 </div>
                                 <div class="row text-center services-statistics landing-statistics">
                                     <div class="col-xl-3 col-md-6 col-lg-6">
@@ -214,14 +214,14 @@
                                             <div class="card-body bg-primary-transparent">
                                                 <div class="counter-status">
                                                     <div class="counter-icon bg-primary-transparent box-shadow-primary">
-                                                        <i class="fe fe-layers text-primary fs-23"></i>
+                                                        <i class="fe fe-book-open text-primary fs-23"></i>
                                                     </div>
                                                     <div class="test-body text-center">
                                                         <h1 class=" mb-0">
                                                             <span class="counter fw-semibold counter ">100</span>+
                                                         </h1>
                                                         <div class="counter-text">
-                                                            <h5 class="font-weight-normal mb-0 ">HTML Pages</h5>
+                                                            <h5 class="font-weight-normal mb-0 ">Courses Available</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -233,14 +233,14 @@
                                             <div class="card-body bg-secondary-transparent">
                                                 <div class="counter-status">
                                                     <div class="counter-icon bg-secondary-transparent box-shadow-secondary">
-                                                        <i class="fe fe-wind text-secondary fs-23"></i>
+                                                        <i class="fe fe-users text-secondary fs-23"></i>
                                                     </div>
                                                     <div class="text-body text-center">
                                                         <h1 class=" mb-0">
-                                                            <span class="counter fw-semibold counter ">60</span>+
+                                                            <span class="counter fw-semibold counter ">2000</span>+
                                                         </h1>
                                                         <div class="counter-text">
-                                                            <h5 class="font-weight-normal mb-0 ">Integrated Plugins</h5>
+                                                            <h5 class="font-weight-normal mb-0 ">Happy Students</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -252,14 +252,14 @@
                                             <div class="card-body bg-success-transparent">
                                                 <div class="counter-status">
                                                     <div class="counter-icon bg-success-transparent box-shadow-success">
-                                                        <i class="fe fe-file-text text-success fs-23"></i>
+                                                        <i class="fe fe-award text-success fs-23"></i>
                                                     </div>
                                                     <div class="text-body text-center">
                                                         <h1 class=" mb-0">
-                                                            <span class="counter fw-semibold counter ">10</span>+
+                                                            <span class="counter fw-semibold counter ">50</span>+
                                                         </h1>
                                                         <div class="counter-text">
-                                                            <h5 class="font-weight-normal mb-0 ">Form Elements</h5>
+                                                            <h5 class="font-weight-normal mb-0 ">Certified Instructors</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -271,14 +271,14 @@
                                             <div class="card-body bg-danger-transparent">
                                                 <div class="counter-status">
                                                     <div class="counter-icon bg-danger-transparent box-shadow-danger">
-                                                        <i class="fe fe-grid text-danger fs-23"></i>
+                                                        <i class="fe fe-heart text-danger fs-23"></i>
                                                     </div>
                                                     <div class="text-body text-center">
                                                         <h1 class=" mb-0">
-                                                            <span class="counter fw-semibold counter ">30</span>+
+                                                            <span class="counter fw-semibold counter ">95</span>%
                                                         </h1>
                                                         <div class="counter-text">
-                                                            <h5 class="font-weight-normal mb-0 ">Customize Widgets</h5>
+                                                            <h5 class="font-weight-normal mb-0 ">Student Satisfaction</h5>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -288,6 +288,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- ROW-1 CLOSED -->
 
                         <!-- ROW-2 OPEN -->
@@ -443,46 +444,20 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="card bg-transparent mb-0">
-                                        <h4 class="text-center fw-semibold text-white">Features</h4>
+                                        <h4 class="text-center fw-semibold text-white">Subjects</h4>
                                         <span class="landing-title"></span>
                                         <div class="demo-screen-skin code-quality" id="dependencies">
                                             <div class="text-center p-0">
-                                                <h2 class="text-center fw-semibold text-white">Features Used in Sash Admin Template</h2>
+                                                <h2 class="text-center fw-semibold text-white">Subjects Taught at Our Institution</h2>
                                                 <div class="row justify-content-center">
                                                     <div class="col-lg-12 px-0">
                                                         <div class="feature-logos mt-5">
+                                                            @foreach ($subjects as $subject)
                                                             <div class="slide">
                                                                 <img src="../assets/images/landing/web/1.png">
-                                                                <h5 class="mt-3 text-white">Bootstrap5</h5>
+                                                                <h5 class="mt-3 text-white">{{ $subject->name }}</h5>
                                                             </div>
-                                                            <div class="slide">
-                                                                <img src="../assets/images/landing/web/2.png">
-                                                                <h5 class="mt-3 text-white">HTML5</h5>
-                                                            </div>
-                                                            <div class="slide">
-                                                                <img src="../assets/images/landing/web/3.png">
-                                                                <h5 class="mt-3 text-white">JQuery</h5>
-                                                            </div>
-                                                            <div class="slide">
-                                                                <img src="../assets/images/landing/web/4.png">
-                                                                <h5 class="mt-3 text-white">Sass</h5>
-                                                            </div>
-                                                            <div class="slide">
-                                                                <img src="../assets/images/landing/web/5.png">
-                                                                <h5 class="mt-3 text-white">Gulp</h5>
-                                                            </div>
-                                                            <div class="slide">
-                                                                <img src="../assets/images/landing/web/6.png">
-                                                                <h5 class="mt-3 text-white">NPM</h5>
-                                                            </div>
-                                                            <div class="slide">
-                                                                <img src="../assets/images/landing/web/1.png">
-                                                                <h5 class="mt-3 text-white">Bootstrap5</h5>
-                                                            </div>
-                                                            <div class="slide">
-                                                                <img src="../assets/images/landing/web/2.png">
-                                                                <h5 class="mt-3 text-white">HTML5</h5>
-                                                            </div>
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                 </div>

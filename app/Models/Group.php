@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Group extends Model
 {
@@ -52,5 +53,25 @@ class Group extends Model
     public function students(): BelongsToMany
     {
         return $this->belongsToMany(Student::class, 'groups_students', 'group_id', 'student_id');
+    }
+
+    /**
+     * The lessons that belong to the Group
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function lessons(): BelongsToMany
+    {
+        return $this->belongsToMany(Lesson::class, 'lessons_group', 'lesson_id', 'group_id');
+    }
+
+    /**
+     * Get all of the timetable for the Group
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function timetable(): HasMany
+    {
+        return $this->hasMany(Timetable::class);
     }
 }

@@ -47,7 +47,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('class_rooms.create') }}" class="btn btn-primary"> {{__('app.create')}} <i class="fa fa-plus"></i></a>
+                    <a href="{{ route('lessons.create') }}" class="btn btn-primary"> {{__('app.create')}} <i class="fa fa-plus"></i></a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -55,24 +55,22 @@
                             <thead>
                             <tr>
                                 <th class="border-bottom-0">{{ __('app.branch') }}</th>
-                                <th class="border-bottom-0">{{ __('app.name') }}</th>
+                                <th class="border-bottom-0">{{ __('app.start_time') }}</th>
+                                <th class="border-bottom-0">{{ __('app.end_time') }}</th>
                                 <th class="border-bottom-0">{{ __('app.actions') }}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($class_rooms as $class_room)
+                            @foreach($lessons as $lesson)
                                 <tr>
-                                    <td>{{ $class_room->branch->name  }}</td>
-                                    <td>{{ $class_room->name  }}</td>
+                                    <td>{{ $lesson->name  }}</td>
+                                    <td>{{ $lesson->start_time  }}</td>
+                                    <td>{{ $lesson->end_time  }}</td>
                                     <td>
-                                        <a href="{{ route('class_rooms.show', $class_room->id) }}" class="btn btn-warning btn-sm">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                        
-                                        <a href="{{ route('class_rooms.edit', $class_room->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ route('lessons.edit', $lesson->id) }}" class="btn btn-primary btn-sm">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <form action="{{ route( 'class_rooms.destroy', $class_room->id) }}" method="POST" class="d-inline">
+                                        <form action="{{ route( 'lessons.destroy', $lesson->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger btn-sm">

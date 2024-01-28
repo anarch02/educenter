@@ -51,4 +51,14 @@ class Branch extends Model
     {
         return $this->hasMany(Group::class);
     }
+
+    /**
+     * Get all of the timetable for the Branch
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function timetable(): HasMany
+    {
+        return $this->hasMany(TimeTable::class);
+    }
 }

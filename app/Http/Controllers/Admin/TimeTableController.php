@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ClassRoomRequest;
 use Illuminate\Http\Request;
 
-class ClassRoomContoller extends Controller
+class TimeTableController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.classrooms.index', [
-            'class_rooms' => \App\Models\ClassRoom::all(),
-            'title' => 'class_rooms'
+        return view('admin.time_tables.index', [
+            'title' => 'timetables',
+            'branches' => \App\Models\Branch::all(),
         ]);
     }
 
@@ -30,7 +29,7 @@ class ClassRoomContoller extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ClassRoomRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -40,10 +39,7 @@ class ClassRoomContoller extends Controller
      */
     public function show(string $id)
     {
-        return view('admin.classrooms.show', [
-            'class_room' => \App\Models\ClassRoom::find($id),
-            'title' => 'class_rooms'
-        ]);
+        //
     }
 
     /**
@@ -57,7 +53,7 @@ class ClassRoomContoller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ClassRoomRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
         //
     }

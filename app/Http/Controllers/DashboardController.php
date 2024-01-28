@@ -33,7 +33,11 @@ class DashboardController extends Controller
                     [
                         'title' => 'teachers',
                         'route' => 'teachers.index',
-                    ]
+                    ],
+                    [
+                        'title' => 'lessons',
+                        'route' => 'lessons.index',
+                    ],
                 ]
             ],
             [
@@ -45,6 +49,11 @@ class DashboardController extends Controller
                 'title' => 'subjects',
                 'route' => 'subjects.index',
                 'icon' => 'fe fe-book',
+            ],
+            [
+                'title' => 'timetables',
+                'route' => 'time_tables.index',
+                'icon' => 'fe fe-calendar',
             ],
         ];
     }

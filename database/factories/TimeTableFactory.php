@@ -17,7 +17,11 @@ class TimeTableFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'branch_id' => \App\Models\Branch::query()->inRandomOrder()->value('id'),
+            'group_id' => \App\Models\Group::query()->inRandomOrder()->value('id'),
+            'class_room_id' => \App\Models\ClassRoom::query()->inRandomOrder()->value('id'),
+            'lesson_id' => \App\Models\Lesson::query()->inRandomOrder()->value('id'),
+            'days_of_week_id' => \App\Models\DaysOfWeek::query()->inRandomOrder()->value('id'),
         ];
     }
 }

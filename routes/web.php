@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\StudentContoller;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\Admin\TimeTableController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\App;
@@ -25,7 +26,9 @@ use Illuminate\Support\Facades\App;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'subjects' => \App\Models\Subject::all(),
+    ]);
 });
 
 Auth::routes();
@@ -43,15 +46,17 @@ Route::middleware(['auth', 'set_locale'])->group(function () {
     Route::resource('subjects', SubjectController::class);
     Route::resource('teachers', TeacherController::class);
     Route::resource('lessons', LessonController::class);
+    // Route::resource('days_of_weeks', DaysOfWeekController::class);
+    Route::resource('time_tables', TimeTableController::class);
 });
 
 
-Route::get('/greeting/{locale}', function (string $locale) {
-    if (! in_array($locale, ['en', 'ru'])) {
-        abort(400);
-    }
+// Route::get('/greeting/{locale}', function (string $locale) {
+//     if (! in_array($locale, ['en', 'ru'])) {
+//         abort(400);
+//     }
  
-    App::setLocale($locale);
+//     App::setLocale($locale);
  
-    return redirect()->back();
-})->name('lang');
+//     return redirect()->back();
+// })->name('lang');
