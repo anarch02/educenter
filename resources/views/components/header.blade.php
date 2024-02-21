@@ -11,8 +11,11 @@
             </a>
             <!-- LOGO -->
             <div class="main-header-center ms-3 d-none d-lg-block">
-                <input type="text" class="form-control" id="typehead" placeholder="Search for results..." autocomplete="off">
-                <button class="btn px-0 pt-2"><i class="fe fe-search" aria-hidden="true"></i></button>
+                <form action="{{route('search_process')}}" method="post">
+                    @csrf
+                    <input type="text" class="form-control" name="search_request" id="typehead" placeholder="Search for results..." autocomplete="off">
+                    <button type="submit" class="btn px-0 pt-2"><i class="fe fe-search" aria-hidden="true"></i></button>
+                </form>
             </div>
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
                 <div class="dropdown d-none">
@@ -21,10 +24,13 @@
                     </a>
                     <div class="dropdown-menu header-search dropdown-menu-start">
                         <div class="input-group w-100 p-2">
-                            <input type="text" class="form-control" placeholder="Search....">
-                            <div class="input-group-text btn btn-primary">
-                                <i class="fe fe-search" aria-hidden="true"></i>
-                            </div>
+                            <form action="{{ route('search_process') }}" method="post">
+                            @csrf
+                                <input type="text" class="form-control" placeholder="Search....">
+                                <div class="input-group-text btn btn-primary">
+                                    <i class="fe fe-search" aria-hidden="true"></i>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -44,7 +50,7 @@
                                 </a>
                                 <div class="dropdown-menu header-search dropdown-menu-start">
                                     <div class="input-group w-100 p-2">
-                                        <input type="text" class="form-control" placeholder="Search....">
+                                        <input type="text" value="test" class="form-control" placeholder="Search....">
                                         <div class="input-group-text btn btn-primary">
                                             <i class="fa fa-search" aria-hidden="true"></i>
                                         </div>

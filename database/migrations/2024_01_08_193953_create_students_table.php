@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
+            $table->string('image')->nullable();
             $table->foreignIdFor(\App\Models\Branch::class)->constrained()->cascadeOnDelete();
             $table->string('phone', 20);
             $table->timestamps();

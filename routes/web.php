@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\ClassRoomContoller;
 use App\Http\Controllers\Admin\GroupContoller;
 use App\Http\Controllers\Admin\LessonController;
+use App\Http\Controllers\Admin\SearchController;
 use App\Http\Controllers\Admin\StudentContoller;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\TeacherController;
@@ -48,6 +49,11 @@ Route::middleware(['auth', 'set_locale'])->group(function () {
     Route::resource('lessons', LessonController::class);
     // Route::resource('days_of_weeks', DaysOfWeekController::class);
     Route::resource('time_tables', TimeTableController::class);
+
+    Route::get('/search', [SearchController::class, 'index'])->name('search');
+    Route::post('/search', [SearchController::class, 'search'])->name('search_process');
+
+    Route::get('/search/groups', [SearchController::class, 'get_groups'])->name('get_groups');
 });
 
 

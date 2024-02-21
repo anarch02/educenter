@@ -51,7 +51,7 @@ class DashboardController extends Controller
                 'icon' => 'fe fe-book',
             ],
             [
-                'title' => 'timetables',
+                'title' => 'timetable',
                 'route' => 'time_tables.index',
                 'icon' => 'fe fe-calendar',
             ],

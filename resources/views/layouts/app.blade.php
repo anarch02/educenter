@@ -571,7 +571,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content country-select-modal">
                 <div class="modal-header">
-                    <h6 class="modal-title">Choose language</h6><button aria-label="Close" class="btn-close"
+                    <h6 class="modal-title">{{__('app.choose_lang')}}</h6><button aria-label="Close" class="btn-close"
                                                                        data-bs-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">
@@ -579,7 +579,7 @@
                         @foreach (config('app.available_locales') as $locale)
                         <li class="col-lg-6 mb-2">
                             <a href="{{ route('lang', $locale) }}" class="btn btn-country btn-lg btn-block @if(app()->getLocale() == $locale) active @endif">
-                                    <span class="country-selector"><i class="flag flag-en"></i></span>{{ $locale }}
+                                    <span class="country-selector"><i class="flag flag-{{$locale}}"></i></span>{{ __('app.'.$locale) }}
                             </a>
                         </li>
                         @endforeach
@@ -621,23 +621,23 @@
 @yield('js')
 
  <!-- SIDE-MENU JS -->
- <script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+ <script src="{{ asset('assets/plugins/sidemenu/sidemenu.js') }}"></script>
 
  <!-- TypeHead js -->
- <script src="../assets/plugins/bootstrap5-typehead/autocomplete.js"></script>
- <script src="../assets/js/typehead.js"></script>
+ <script src="{{ asset('assets/plugins/bootstrap5-typehead/autocomplete.js') }}"></script>
+ <script src="{{ asset('assets/js/typehead.js') }}"></script>
 
  <!-- INTERNAL SELECT2 JS -->
- <script src="../assets/plugins/select2/select2.full.min.js"></script>
+ <script src="{{ asset('assets/plugins/select2/select2.full.min.js') }}"></script>
 
 
  <!-- SIDEBAR JS -->
- <script src="../assets/plugins/sidebar/sidebar.js"></script>
+ <script src="{{ asset('assets/plugins/sidebar/sidebar.js') }}"></script>
 
  <!-- Perfect SCROLLBAR JS-->
- <script src="../assets/plugins/p-scroll/perfect-scrollbar.js"></script>
- <script src="../assets/plugins/p-scroll/pscroll.js"></script>
- <script src="../assets/plugins/p-scroll/pscroll-1.js"></script>
+ <script src="{{ asset('assets/plugins/p-scroll/perfect-scrollbar.js') }}"></script>
+ <script src="{{ asset('assets/plugins/p-scroll/pscroll.js') }}"></script>
+ <script src="{{ asset('assets/plugins/p-scroll/pscroll-1.js') }}"></script>
 
 <!-- Color Theme js -->
 <script src="{{ asset('assets/js/themeColors.js') }}"></script>

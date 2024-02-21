@@ -23248,8 +23248,8 @@ ul.timeline>li:before {
     background-image: url("../images/flags/ga.svg");
 }
 
-.flag-gb-eng {
-    background-image: url("../images/flags/gb-eng.svg");
+.flag-en {
+    background-image: url("../images/flags/gb.svg");
 }
 
 .flag-gb-nir {
@@ -23264,9 +23264,9 @@ ul.timeline>li:before {
     background-image: url("../images/flags/gb-wls.svg");
 }
 
-.flag-gb {
+/* .flag-gb {
     background-image: url("../images/flags/gb.svg");
-}
+} */
 
 .flag-gd {
     background-image: url("../images/flags/gd.svg");

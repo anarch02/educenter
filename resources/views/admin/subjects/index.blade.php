@@ -3,26 +3,6 @@
 @section('title', 'Branches')
 
 @section('js')
-    <!-- CHART-CIRCLE JS-->
-    <script src="{{ asset('assets/js/circle-progress.min.js') }}"></script>
-
-    <!-- C3 CHART JS -->
-    <script src="{{ asset('assets/plugins/charts-c3/d3.v5.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/charts-c3/c3-chart.js') }}"></script>
-
-    <!-- INPUT MASK JS-->
-    <script src="{{ asset('assets/plugins/input-mask/jquery.mask.min.js') }}"></script>
-
-    <!-- SIDE-MENU JS -->
-    <script src="{{ asset('assets/plugins/sidemenu/sidemenu.js') }}"></script>
-
-    <!-- TypeHead js -->
-    <script src="{{ asset('assets/plugins/bootstrap5-typehead/autocomplete.js') }}"></script>
-    <script src="{{ asset('assets/js/typehead.js') }}"></script>
-
-    <!-- INTERNAL SELECT2 JS -->
-    <script src="{{ asset('assets/plugins/select2/select2.full.min.js') }}"></script>
-
     <!-- DATA TABLE JS-->
     <script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatable/js/dataTables.bootstrap5.js') }}"></script>

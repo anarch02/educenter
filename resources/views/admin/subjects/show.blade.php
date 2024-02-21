@@ -27,6 +27,29 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">{{ __('app.subject') }}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="">
+                        <ul class="list-group">
+                            @foreach ($subject->groups as $group)
+                            <li class="list-group-item justify-content-between">
+                                <a href="{{ route('groups.show', $group->id) }}">{{ $group->name }}
+                                <span class="badgetext badge bg-primary rounded-pill">
+                                    {{ $group->subject->name }}
+                                </span>
+                                </a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
        
     </div>
     <!-- ROW-1 CLOSED -->

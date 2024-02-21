@@ -65,9 +65,9 @@
                             @foreach ($group->students as $student)
                             <li class="list-group-item justify-content-between">
                                 {{ $student->name }}
-                                <button class="badgetext badge bg-primary rounded-pill">
+                                <a href="{{ route('students.show', $student->id) }}" class="badgetext badge bg-primary rounded-pill">
                                     <i class="fa fa-eye"></i>
-                                </button>
+                                </a>
                             </li>
                             @endforeach
                         </ul>
