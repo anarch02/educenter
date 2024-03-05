@@ -5,23 +5,6 @@
 ### Description
 This is a CRM (Customer Relationship Management) system for an education center. It helps manage student information, course enrollment, and other administrative tasks.
 
-### Requirements
-
-- Node.js (version 12 or above)
-- MongoDB (running instance)
-
-### License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
-
-## Laravel Project Setup and Execution Instructions
-
-### Prerequisites
-
-- PHP (version 7.4 or above)
-- Composer (latest version)
-- MySQL (running instance)
-
 ### Installation
 
 1. Clone the Laravel project repository to your local machine.

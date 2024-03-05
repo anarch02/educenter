@@ -50,9 +50,9 @@
                     <a href="{{ route('branches.create') }}" class="btn btn-primary">Add Branch</a>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
+                    {{-- <div class="table-responsive">
                         <x-table :table="$table" :array="$branches" :route="$route" />
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
