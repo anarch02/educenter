@@ -22,6 +22,8 @@
 
 @section('content')
 
+<button class="btn btn-warning bg-warning-gradient mt-3 mb-3 mb-md-0" data-bs-toggle="modal" data-bs-target="#fullscreenmodal">Fullscreen Modal</button>
+
     <!-- Row -->
     <div class="row row-sm">
         <div class="col-lg-12">
@@ -39,6 +41,39 @@
     </div>
     <!-- End Row -->
 
+    <x-modal>
+        <x-form id="add-form" class="index" :route="route('branches.store')">
+            @csrf
+            @isset($branch)
+                @method('PUT')
+            @endisset
+            <div class="modal-header">
+                <h5 class="modal-title">{{ __('app.create') }}</h5>
+                <button class="btn-close me-1" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <x-form.select :collection="$regions" :name="'region_id'" :label="'region'" />
+                    <x-form.select :collection="$cities" :name="'city_id'" :label="'city'" />
+                    <x-form.input :type="'text'" :name="'name'" />
+                    <x-form.input :type="'text'" :name="'address'" />
+                    <x-form.input :type="'text'" :name="'phone'" />
+                </div>
+            </div>  
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="reset" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-primary" type="submit" id="submit">Save changes</button>
+            </div>
+
+        </x-form>
+        
+        
+        
+    </x-modal>
 
 @endsection
 

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('days_of_weeks', function (Blueprint $table) {
             $table->id();
             $table->string('day');
+            $table->boolean('even_day')->default(false);
             $table->timestamps();
         });
     }

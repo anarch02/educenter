@@ -57,4 +57,34 @@ class DashboardController extends Controller
             ],
         ];
     }
+
+    public function getCards()
+    {
+        return [
+            [
+                'title' => 'students',
+                'icon' => 'fe fe-users',
+                'count' => \App\Models\Student::count(),
+                'color' => 'bg-primary box-primary-shadow',
+            ],
+            [
+                'title' => 'teachers',
+                'icon' => 'fe fe-users',
+                'count' => \App\Models\Teacher::count(),
+                'color' => 'bg-secondary box-secondary-shadow',
+            ],
+            [
+                'title' => 'subjects',
+                'icon' => 'fe fe-book',
+                'count' => \App\Models\Subject::count(),
+                'color' => 'bg-info box-info-shadow',
+            ],
+            [
+                'title' => 'branches',
+                'icon' => 'fe fe-layers',
+                'count' => \App\Models\Branch::count(),
+                'color' => 'bg-warning box-warning-shadow',
+            ],
+        ];
+    }
 }

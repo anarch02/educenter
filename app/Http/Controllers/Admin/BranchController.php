@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BranchRequest;
 use App\Models\Branch;
+use App\Models\City;
+use App\Models\Region;
 use Illuminate\Http\Request;
 
 class BranchController extends Controller
@@ -24,6 +26,8 @@ class BranchController extends Controller
             'table' => $this->table,
             'title' => $this->title,
             'route' => $this->route,
+            'regions' => Region::get(['id', 'name']),
+            'cities' => City::get(['id', 'name']),
         ]);
     }
 
@@ -46,7 +50,10 @@ class BranchController extends Controller
     {
         Branch::create($request->validated());
 
-        return redirect()->route('branches.index')->with('success', 'Branch created.');
+        return response()->json([
+            'status' => 'success', 
+            'message' => 'New branch created.'
+        ]);
     }
 
     /**
@@ -88,8 +95,11 @@ class BranchController extends Controller
      */
     public function destroy(string $id)
     {
-        Branch::findOrFail($id)->delete();
+        $branch = Branch::findOrFail($id)->delete();
 
-        return redirect()->route('branches.index')->with('success', 'Branch deleted.');
+        return response()->json([
+            'status' => 'success', 
+            'message' => 'Branch deleted.'
+        ]);
     }
 }

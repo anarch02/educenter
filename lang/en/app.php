@@ -55,6 +55,8 @@ return [
     'invoice' => 'Invoice',
     'invoices' => 'Invoices',
     'is_paid' => 'Is Paid',
+    'saturday' => 'Saturday',
+    'phone' => 'Phone',
     'lang' => 'English',
     'lang_text' => 'Choose language',
     'language' => 'Language',

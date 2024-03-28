@@ -22,7 +22,7 @@ class BranchRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'unique:branches,name,' . $this->route('branch')?->id],
             'region_id' => ['required', 'exists:regions,id'],
             'city_id' => ['required', 'exists:cities,id'],
             'address' => ['required', 'string', 'max:255'],

@@ -17,7 +17,7 @@
                             @foreach ($object as $item)
                                 @if ($item->days_of_week_id == $day->id && $item->lesson_id == $lesson->id)
                                     <a href="{{ route('groups.show', $item->group_id) }}" class="btn btn-warning">
-                                        {{ $item->group->name }}
+                                        {{ $item->group->name }} || {{ $item->classroom->name }}
                                     </a>
                                 @endif
                             @endforeach

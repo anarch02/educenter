@@ -21,7 +21,7 @@
                 <a href="{{ route($route .'.edit', $item->id) }}" class="btn btn-primary btn-sm">
                     <i class="fa fa-edit"></i>
                 </a>
-                <form action="{{ route($route . '.destroy', $item->id) }}" method="POST" class="d-inline">
+                <form id="del-form" action="{{ route($route . '.destroy', $item->id) }}" data-ajax="true" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm">
