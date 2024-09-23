@@ -5,12 +5,38 @@
 
 @section('content')
 
+    <!-- PAGE-HEADER -->
+    <div class="page-header">
+        <h1 class="page-title">{{ isset($subject) ? $subject->name : __('app.create') }}</h1>
+        <div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('subjects.index') }}">{{ __('app.subjects') }}</a></li>
+                <li class="breadcrumb-item {{ isset($subject) ? '' : 'active' }}" aria-current="page">{{ isset($subject) ? __('app.edit') : __('app.create') }}</li>
+                @isset($subject)
+                <li class="breadcrumb-item active" aria-current="page">{{ $subject->name }}</li>
+                @endisset
+            </ol>
+        </div>
+    </div>
+    <!-- PAGE-HEADER END -->
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <!-- Row -->
     <div class="row center">
         <div class="col-xl-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">{{ isset($subject) ? 'Edit' : 'Create new' }}</h3>
+                    <h3 class="card-title">{{ isset($subject) ? __('app.edit') : __('app.create') }}</h3>
                 </div>
                 <div class="card-body">
                     <form action="{{ isset($subject) ? route('subjects.update', $subject->id ) : route('subjects.store') }}" method="POST">

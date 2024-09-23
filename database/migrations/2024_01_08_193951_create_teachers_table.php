@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('surname')->nullable()->default(null);
             $table->foreignIdFor(\App\Models\Branch::class)->constrained()->cascadeOnDelete();
+            $table->string('first_name');
+            $table->string('last_name')->nullable()->default(null);
             $table->string('email')->unique();
+            $table->string('phone')->nullable()->default(null);
+            $table->string('password');
+            $table->string('avatar')->nullable()->default(null);
             $table->timestamps();
         });
     }

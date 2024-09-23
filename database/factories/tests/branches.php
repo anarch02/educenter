@@ -2,26 +2,26 @@
 
     return [
         [
-            'name' => 'Branch 1',
+            'name' => 'Мирабадский филиал',
             'city_id' => 1,
             'region_id' => 1,
-            'address' => 'Address 1',
-            'phone' => '+1 111 111 1111',
+            'address' => 'р-н Мирабад, ул. Мирагон, 1',
+            'phone' => '+99 890 111 1111',
         ],
         [
-            'name' => 'Branch 2',
-            'city_id' => 1,
-            'region_id' => 1,
-            'address' => 'Address 2',
-            'phone' => '+1 111 111 1112',
-        ],
-        [
-            'name' => 'Branch 3',
+            'name' => 'Ферганский филиал',
             'city_id' => 2,
-            'region_id' => 1,
-            'address' => 'Address 3',
-            'phone' => '+1 111 111 1113',
+            'region_id' => 2,
+            'address' => 'р-н Фергана, ул. Фергана, 2',
+            'phone' => '+99 890 111 1112',
+        ],
+        [
+            'name' => 'Регистанский филиал',
+            'city_id' => 3,
+            'region_id' => 3,
+            'address' => 'р-н Регистан, ул. Регистан, 3',
+            'phone' => '+99 890 111 1113',
         ]
-        
-        
+
+
     ];

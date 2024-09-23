@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClassRoomRequest;
+use App\Models\ClassRoom;
 use Illuminate\Http\Request;
 
 class ClassRoomContoller extends Controller
@@ -24,7 +25,10 @@ class ClassRoomContoller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.classrooms.action', [
+            'title' => 'class_rooms',
+            'branches' => \App\Models\Branch::all(),
+        ]);
     }
 
     /**
@@ -32,7 +36,9 @@ class ClassRoomContoller extends Controller
      */
     public function store(ClassRoomRequest $request)
     {
-        //
+        $class_room = ClassRoom::create($request->validated());
+
+        return redirect()->route('class_rooms.show', $class_room->id)->with('message', 'created');
     }
 
     /**
@@ -51,7 +57,10 @@ class ClassRoomContoller extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.classrooms.action', [
+            'class_room' => ClassRoom::findOrFail($id),
+            'branches' => \App\Models\Branch::all(),
+        ]);
     }
 
     /**
@@ -59,7 +68,9 @@ class ClassRoomContoller extends Controller
      */
     public function update(ClassRoomRequest $request, string $id)
     {
-        //
+        \App\Models\ClassRoom::findOrFail($id)->update($request->validated());
+
+        return redirect()->route('class_rooms.show', $id)->with('message', 'updated');
     }
 
     /**
@@ -67,6 +78,8 @@ class ClassRoomContoller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        \App\Models\ClassRoom::findOrFail($id)->delete();
+
+        return redirect()->route('class_rooms.index')->with('success', 'Subject deleted.');
     }
 }

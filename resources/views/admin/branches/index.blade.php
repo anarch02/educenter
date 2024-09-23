@@ -22,7 +22,17 @@
 
 @section('content')
 
-<button class="btn btn-warning bg-warning-gradient mt-3 mb-3 mb-md-0" data-bs-toggle="modal" data-bs-target="#fullscreenmodal">Fullscreen Modal</button>
+<!-- PAGE-HEADER -->
+<div class="page-header">
+    <h1 class="page-title">{{ __('app.branches') }}</h1>
+    <div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('app.dashboard') }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ __('app.branches') }}</li>
+        </ol>
+    </div>
+</div>
+<!-- PAGE-HEADER END -->
 
     <!-- Row -->
     <div class="row row-sm">
@@ -62,7 +72,7 @@
                     <x-form.input :type="'text'" :name="'address'" />
                     <x-form.input :type="'text'" :name="'phone'" />
                 </div>
-            </div>  
+            </div>
 
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="reset" data-bs-dismiss="modal">Close</button>
@@ -70,9 +80,9 @@
             </div>
 
         </x-form>
-        
-        
-        
+
+
+
     </x-modal>
 
 @endsection

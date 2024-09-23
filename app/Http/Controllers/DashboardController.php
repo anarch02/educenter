@@ -9,54 +9,71 @@ class DashboardController extends Controller
     public function getSidebar()
     {
         return [
-            [
-                'title' => 'dashboard',
-                'route' => 'home',
-                'icon' => 'fe fe-home',
+            "main" => [
+                [
+                    'title' => 'dashboard',
+                    'route' => 'home',
+                    'icon' => 'fe fe-grid',
+                ],
             ],
-            [
-                'title' => 'branches',
-                'icon' => 'fe fe-layers',
-                'sub_menu' => [
-                    [
-                        'title' => 'branches',
-                        'route' => 'branches.index',
-                    ],
-                    [
-                        'title' => 'class_rooms',
-                        'route' => 'class_rooms.index',
-                    ],
-                    [
-                        'title' => 'groups',
-                        'route' => 'groups.index',
-                    ],
-                    [
-                        'title' => 'teachers',
-                        'route' => 'teachers.index',
-                    ],
-                    [
-                        'title' => 'lessons',
-                        'route' => 'lessons.index',
-                    ],
-                ]
+            'timetable' => [
+                [
+                    'title' => 'lessons',
+                    'route' => 'lessons.index',
+                    'icon' => 'fe fe-book-open', // Иконка для lessons
+                ],
+                [
+                    'title' => 'timetable',
+                    'route' => 'time_tables.index',
+                    'icon' => 'fe fe-calendar',
+                ],
             ],
-            [
-                'title' => 'students',
-                'route' => 'students.index',
-                'icon' => 'fe fe-users',
+            'stucture' => [
+                [
+                    'title' => 'branches',
+                    'route' => 'branches.index',
+                    'icon' => 'fe fe-layers',
+                ],
+                [
+                    'title' => 'class_rooms',
+                    'route' => 'class_rooms.index',
+                    'icon' => 'fe fe-grid', // Иконка для classrooms
+                ],
+
             ],
-            [
-                'title' => 'subjects',
-                'route' => 'subjects.index',
-                'icon' => 'fe fe-book',
+            'study' => [
+                [
+                    'title' => 'subjects',
+                    'route' => 'subjects.index',
+                    'icon' => 'fe fe-book',
+                ],
+                [
+                    'title' => 'courses',
+                    'route' => 'courses.index',
+                    'icon' => 'fe fe-book-open',
+                ],
+                [
+                    'title' => 'groups',
+                    'route' => 'groups.index',
+                    'icon' => 'fe fe-users', // Иконка для groups
+                ],
             ],
-            [
-                'title' => 'timetable',
-                'route' => 'time_tables.index',
-                'icon' => 'fe fe-calendar',
+
+            'users' => [
+                [
+                    'title' => 'teachers',
+                    'route' => 'teachers.index',
+                    'icon' => 'fe fe-user-check', // Иконка для teachers
+                ],
+                [
+                    'title' => 'students',
+                    'route' => 'students.index',
+                    'icon' => 'fe fe-users',
+                ],
             ],
         ];
     }
+
 
     public function getCards()
     {

@@ -1,16 +1,16 @@
 <?php
- 
+
     return [
         [
-            'name' => 'City 1',
+            'name' => 'Ташкент',
             'region_id' => 1
         ],
         [
-            'name' => 'City 2',
+            'name' => 'Фергана',
             'region_id' => 1
         ],
         [
-            'name' => 'City 3',
+            'name' => 'Самарканд',
             'region_id' => 2
         ]
     ];

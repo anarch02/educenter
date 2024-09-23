@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\ClassRoomContoller;
+use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\GroupContoller;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\SearchController;
@@ -37,32 +38,29 @@ Auth::routes();
 
 
 Route::middleware(['auth', 'set_locale'])->group(function () {
+    // Главная страница
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('language/{lang}', [LanguageController::class, 'change'])->name('lang');
 
-    Route::resource('branches', BranchController::class);
-    Route::resource('class_rooms', ClassRoomContoller::class);
-    Route::resource('groups', GroupContoller::class);
-    Route::resource('students', StudentContoller::class);
-    Route::resource('subjects', SubjectController::class);
-    Route::resource('teachers', TeacherController::class);
-    Route::resource('lessons', LessonController::class);
-    // Route::resource('days_of_weeks', DaysOfWeekController::class);
-    Route::resource('time_tables', TimeTableController::class);
+    // Расписание
+    Route::resource('time_tables', TimeTableController::class); // расписание
+    Route::resource('lessons', LessonController::class); // уроки
 
+    // Структура
+    Route::resource('branches', BranchController::class); // филиалы
+    Route::resource('class_rooms', ClassRoomContoller::class); // аудитории
+
+    // Учебный план
+    Route::resource('subjects', SubjectController::class); // предметы
+    Route::resource('groups', GroupContoller::class); // группы
+    Route::resource('courses', CourseController::class); // курсы
+
+    // Пользователи
+    Route::resource('students', StudentContoller::class);  // студенты
+    Route::resource('teachers', TeacherController::class); // преподаватели
+
+    // Поиск
     Route::get('/search', [SearchController::class, 'index'])->name('search');
     Route::post('/search', [SearchController::class, 'search'])->name('search_process');
-
     Route::get('/search/groups', [SearchController::class, 'get_groups'])->name('get_groups');
 });
-
-
-// Route::get('/greeting/{locale}', function (string $locale) {
-//     if (! in_array($locale, ['en', 'ru'])) {
-//         abort(400);
-//     }
- 
-//     App::setLocale($locale);
- 
-//     return redirect()->back();
-// })->name('lang');

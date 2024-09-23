@@ -4,8 +4,30 @@
 
 @section('content')
 
+    <!-- PAGE-HEADER -->
+    <div class="page-header">
+        <h1 class="page-title">{{ $branch->name }}</h1>
+        <div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('branches.index') }}">{{ __('app.branches') }}</a></li>
+                <li class="breadcrumb-item" aria-current="page">{{ __('app.show') }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $branch->name }}</li>
+            </ol>
+        </div>
+    </div>
+    <!-- PAGE-HEADER END -->
+
+
     <!-- ROW-1 OPEN -->
     <div class="row">
+
+        @if (session('message'))
+            <div class="alert alert-warning">
+                {{ __('messages.'.session('message'), ['item' => __('app.branch')]) }}
+            </div>
+        @endif
+
+
         <div class="col-xl-4">
             <div class="card">
                 <div class="card-header">
@@ -13,9 +35,6 @@
                 </div>
                 <div class="card-body">
                     <div class="text-center chat-image mb-5">
-                        {{-- <div class="avatar avatar-xxl chat-profile mb-3 brround">
-                            <a class="" href="profile.html"><img alt="avatar" src="../assets/images/users/7.jpg" class="brround"></a>
-                        </div> --}}
                         <div class="main-chat-msg-name">
                             <a href="profile.html">
                                 <h5 class="mb-1 text-dark fw-semibold">{{ $branch->name }}</h5>
@@ -101,7 +120,7 @@
     <!-- ROW-1 CLOSED -->
 
     <div class="row">
-        
+
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">

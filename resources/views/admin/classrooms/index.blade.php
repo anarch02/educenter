@@ -22,6 +22,18 @@
 
 @section('content')
 
+<!-- PAGE-HEADER -->
+<div class="page-header">
+    <h1 class="page-title">{{ __('app.class_rooms') }}</h1>
+    <div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('app.dashboard') }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ __('app.class_rooms') }}</li>
+        </ol>
+    </div>
+</div>
+<!-- PAGE-HEADER END -->
+
     <!-- Row -->
     <div class="row row-sm">
         <div class="col-lg-12">
@@ -48,7 +60,7 @@
                                         <a href="{{ route('class_rooms.show', $class_room->id) }}" class="btn btn-warning btn-sm">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                        
+
                                         <a href="{{ route('class_rooms.edit', $class_room->id) }}" class="btn btn-primary btn-sm">
                                             <i class="fa fa-edit"></i>
                                         </a>
@@ -64,7 +76,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        
+
                     </div>
                 </div>
             </div>

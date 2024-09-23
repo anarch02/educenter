@@ -48,12 +48,9 @@ class BranchController extends Controller
      */
     public function store(BranchRequest $request)
     {
-        Branch::create($request->validated());
+        $branch = Branch::create($request->validated());
 
-        return response()->json([
-            'status' => 'success', 
-            'message' => 'New branch created.'
-        ]);
+        return redirect()->route('branches.show', $branch->id)->with('message', 'created');
     }
 
     /**
@@ -85,9 +82,9 @@ class BranchController extends Controller
      */
     public function update(BranchRequest $request, string $id)
     {
-        Branch::findOrFail($id)->update($request->validated());
+        $branch = Branch::findOrFail($id)->update($request->validated());
 
-        return redirect()->route('branches.index')->with('success', 'Branch updated.');
+        return redirect()->route('branches.show', $id)->with('message', 'updated');
     }
 
     /**
@@ -98,7 +95,7 @@ class BranchController extends Controller
         $branch = Branch::findOrFail($id)->delete();
 
         return response()->json([
-            'status' => 'success', 
+            'status' => 'success',
             'message' => 'Branch deleted.'
         ]);
     }

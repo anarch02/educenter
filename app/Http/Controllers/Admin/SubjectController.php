@@ -35,9 +35,9 @@ class SubjectController extends Controller
      */
     public function store(SubjectRequest $request)
     {
-        \App\Models\Subject::create($request->validated());
+        $subject = \App\Models\Subject::create($request->validated());
 
-        return redirect()->route('subjects.index')->with('success', 'Subject created.');
+        return redirect()->route('subjects.show', $subject->id)->with('message', 'created');
     }
 
     /**
@@ -69,7 +69,7 @@ class SubjectController extends Controller
     {
         \App\Models\Subject::findOrFail($id)->update($request->validated());
 
-        return redirect()->route('subjects.index')->with('success', 'Subject updated.');
+        return redirect()->route('subjects.show', $id)->with('message', 'updated');
     }
 
     /**
